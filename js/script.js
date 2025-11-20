@@ -1,7 +1,7 @@
 // global variables--
 const global = {
     // To make a router-which page we're on---
-    currentPage: window.location.pathname,
+    currentPage: window.location.pathname.replace('/Novaflixx_App', ''),
 
     search : {
         term: '',
@@ -28,7 +28,7 @@ async function displayPopularMovies() {
         const image = document.createElement('img');
 
         // Condition-- if image then else no image--
-        movie.poster_path ? image.src = `https://image.tmdb.org/t/p/w500${movie.poster_path}`: image.src = 'images/no-image.jpg';
+        movie.poster_path ? image.src = `https://image.tmdb.org/t/p/w500${movie.poster_path}`: image.src = './images/no-image.jpg';
 
         image.classList.add('card-img-top');
         image.alt = `${movie.title}`;
@@ -241,7 +241,7 @@ async function displayTVShows() {
         link.href = `tvDetails.html?id=${show.id}`;
 
         const image = document.createElement('img');
-        show.poster_path ? image.src = `https://image.tmdb.org/t/p/w500${show.poster_path}`: image.src = 'images/no-image.jpg';
+        show.poster_path ? image.src = `https://image.tmdb.org/t/p/w500${show.poster_path}`: image.src = './images/no-image.jpg';
 
         image.classList.add('card-img-top');
         image.alt = `${show.name}`;
@@ -427,7 +427,7 @@ function displaySearchResults(results) {
         const link = document.createElement('a');
         link.href = `${global.search.type}Details.html?id=${result.id}`;
         const image = document.createElement('img');
-        image.src = result.poster_path ? image.src = `https://image.tmdb.org/t/p/w500${result.poster_path}`: image.src = 'images/no-image.jpg';
+        image.src = result.poster_path ? image.src = `https://image.tmdb.org/t/p/w500${result.poster_path}`: image.src = './images/no-image.jpg';
         image.alt = global.search.type === 'movie' ? result.title : result.name;
         image.setAttribute('className' , 'card-img-top');
 
