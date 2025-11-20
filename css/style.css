@@ -115,7 +115,7 @@ ul {
 
 /* Section - Now Playing */
 section.now-playing {
-    background-image: url(/images/showcase-bg.jpg);
+    background-image: url(../images/showcase-bg.jpg);
     padding: 80px;
     background-repeat: no-repeat;
     background-position:center;
